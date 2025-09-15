@@ -1,0 +1,7 @@
+local/
+auto-save-list/
+eln-cache/
+elpa/
+tree-sitter/
+server/
+url/
