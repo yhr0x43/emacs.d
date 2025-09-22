@@ -1,5 +1,7 @@
 ;;;; init.el  -*- lexical-binding:t -*-
 
+(setq debug-on-error t)
+
 ;; here stores stand-alone elisp files
 (add-to-list 'load-path "~/.emacs.d/local")
 
@@ -15,9 +17,10 @@
 (keymap-global-set "C-," #'duplicate-line)
 (keymap-global-set "C-." #'copy-from-above-command)
 
-(keymap-set 'dired-mode-map "r" #'dired-kill-subdir)
+(keymap-set dired-mode-map "r" #'dired-kill-subdir)
 
 (global-whitespace-mode 1)
+(add-hook 'before-save-hooks #'whitespace-cleanup)
 
 (use-package multiple-cursors
   :bind (("C-<return>" . 'mc/edit-lines)
@@ -33,7 +36,7 @@
 
 (require 'powershell)
 
-;; gforth
+;; this is actually gforth.el
 (require 'forth-mode "gforth")
 
 (with-eval-after-load 'rainbow-delimiters
@@ -53,4 +56,5 @@
 (with-eval-after-load 'envrc
   (envrc-global-mode))
 
+;; enabled rare commands
 (put 'dired-find-alternate-file 'disabled nil)
