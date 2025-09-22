@@ -7,6 +7,7 @@
  ;; If there is more than one, they won't work right.
  '(backup-by-copying t)
  '(backup-directory-alist `(("." . "~/.local/share/emacs/backup")))
+ '(column-number-mode t)
  '(custom-enabled-themes '(tango-dark))
  '(delete-old-versions t)
  '(display-line-numbers 'relative)
