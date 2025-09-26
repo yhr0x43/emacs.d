@@ -17,7 +17,7 @@
  '(kept-new-versions 6)
  '(kept-old-versions 2)
  '(menu-bar-mode nil)
- '(package-selected-packages '(magit multiple-cursors))
+ '(package-selected-packages '(magit multiple-cursors web-mode))
  '(tab-width 8)
  '(tool-bar-mode nil)
  '(version-control t)

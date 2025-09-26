@@ -13,19 +13,23 @@
 ;;(set-frame-parameter nil 'alpha-background 70)
 ;;(add-to-list 'default-frame-alist '(alpha-background . 70))
 
-(keymap-global-set "<f5>" #'compile)
-(keymap-global-set "C-," #'duplicate-line)
-(keymap-global-set "C-." #'copy-from-above-command)
+(use-package emacs
+  :bind ("<f5>" . compile)
+        ("C-," . duplicate-line)
+        ("C-." . copy-from-above-command))
 
-(keymap-set dired-mode-map "r" #'dired-kill-subdir)
+(use-package dired
+  :bind (:map dired-mode-map
+              ("r" . dired-kill-subdir)))
 
-(global-whitespace-mode 1)
-(add-hook 'before-save-hooks #'whitespace-cleanup)
+(use-package whitespace-mode
+  :hook (before-save . whitespace-cleanup)
+  :config (global-whitespace-mode 1))
 
 (use-package multiple-cursors
-  :bind (("C-<return>" . 'mc/edit-lines)
-         ("C->" . 'mc/mark-next-like-this)
-         ("C-<" . 'mc/mark-previous-like-this)))
+  :bind (("C-<return>" . mc/edit-lines)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)))
 
 ;; c-mode
 (setq-default c-basic-offset 4
