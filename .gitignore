@@ -5,3 +5,5 @@ elpa/
 tree-sitter/
 server/
 url/
+transient/
+network-security.eld
