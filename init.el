@@ -24,8 +24,9 @@
               ("r" . dired-kill-subdir)))
 
 (use-package whitespace-mode
-  :hook (before-save whitespace-cleanup)
-  :config (global-whitespace-mode nil))
+  :hook ((before-save . whitespace-cleanup)
+         (c-mode . whitespace-mode)
+         (emacs-lisp-mode . whitespace-mode)))
 
 (use-package multiple-cursors
   :bind (("C-<return>" . mc/edit-lines)
