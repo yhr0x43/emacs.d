@@ -63,6 +63,9 @@
           ("blade"  . "\\.blade\\.")
           ("svelte" . "\\.svelte\\."))))
 
+(use-package conf-windows-mode
+  :mode "\\.ini\\'")
+
 ;; load this after everything else per recommendation by envrc author
 ;; https://github.com/purcell/envrc#usage
 (with-eval-after-load 'envrc
@@ -70,3 +73,4 @@
 
 ;; enabled rare commands
 (put 'dired-find-alternate-file 'disabled nil)
+(put 'downcase-region 'disabled nil)
