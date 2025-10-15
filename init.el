@@ -39,8 +39,10 @@
   (setq-default c-basic-offset 4
                 c-default-style '((java-mode . "java")
                                   (awk-mode . "awk")
-                                  (other . "bsd")))
-  :hook (c-mode . (lambda () (display-fill-column-indicator-mode t))))
+                                  (other . "gnu")))
+  :hook (c-mode . (lambda ()
+                    (display-fill-column-indicator-mode t)
+                    (set-fill-column 80))))
 
 ;;(use-package powershell)
 
