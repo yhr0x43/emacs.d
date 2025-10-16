@@ -2,17 +2,18 @@
 (setq debug-on-error t)
 
 ;; here stores stand-alone elisp files
-(add-to-list 'load-path "~/.emacs.d/local")
+
+(add-to-list 'load-path (expand-file-name "local" user-emacs-directory))
 
 ;; separate custom.el file
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
 (load "user.el")
 
 ;; transparency
-;(set-frame-parameter nil 'alpha-background 70)
-;(add-to-list 'default-frame-alist '(alpha-background . 70))
+(set-frame-parameter nil 'alpha-background 80)
+(add-to-list 'default-frame-alist '(alpha-background . 80))
 
 (use-package emacs
   :bind (("<f5>" . compile)
@@ -46,10 +47,10 @@
 
 ;;(use-package powershell)
 
-(use-package forth-mode
-  :load-path (lambda () (when (eq system-type 'windows-nt) "c:/Program Files/gforth"))
-  :init
-  (load "gforth"))
+;; (use-package forth-mode
+;;   :load-path (lambda () (when (eq system-type 'windows-nt) "c:/Program Files/gforth"))
+;;   :init
+;; (load "gforth"))
 
 ;(use-package rainbow-delimiters
 ;  :hook emacs-lisp-mode)
